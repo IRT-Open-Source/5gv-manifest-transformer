@@ -8,7 +8,7 @@ Manipulates URLs in manifest files of adaptive bitrate streams.
 
 ## What is this?
 
-The Manifest Transformer service is part of the [platform](https://gitlab.irt.de/5g-victori/platform) for media caching on trains. It replaces hostnames of URLs in manifest of adaptive bitrate video streams by the hostname of the media cache on the train. During precaching, requests for manifest files are forwarded to the Manifest Transformer by the Online Cache. The Manifest Transformer downloads the manifest from the upstream location and tranforms it before passig the result to the Online Cache, where it will be cached.
+The Manifest Transformer service is part of the [platform](../../../5gv-platform) for media caching on trains. It replaces hostnames of URLs in manifest of adaptive bitrate video streams by the hostname of the media cache on the train. During precaching, requests for manifest files are forwarded to the Manifest Transformer by the Online Cache. The Manifest Transformer downloads the manifest from the upstream location and tranforms it before passig the result to the Online Cache, where it will be cached.
 
 ## How does it work?
 
@@ -26,7 +26,7 @@ The Manifest Transformer downloads the respective document and applies a regular
 
 ## Install, build, run
 
-**Note:** _Typically you would use the `up.sh` script from the [Platform](https://gitlab.irt.de/5g-victori/platform) project to install, build and run this service as part of a composite of docker services. Read on if you intend to run the service directly on your host system._
+**Note:** _Typically you would use the `up.sh` script from the [Platform](../../../5gv-platform) project to install, build and run this service as part of a composite of docker services. Read on if you intend to run the service directly on your host system._
 
 **Prerequestits**: Following software needs to be installed on your host machine in order to execute the subsequent steps.
 
@@ -52,7 +52,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-With following command you can build a [docker image](https://www.docker.com) for this service. But again, typically you use the startup script `up.sh` of the [Platform](https://gitlab.irt.de/5g-victori/platform) project to do the job.
+With following command you can build a [docker image](https://www.docker.com) for this service. But again, typically you use the startup script `up.sh` of the [Platform](../../../5gv-platform) project to do the job.
 
 ```bash
 $ DOCKER_BUILDKIT=1 docker build --ssh gitlab="$HOME/.ssh/<<your_private_key_name>>" -t manifest-transformer:latest .
